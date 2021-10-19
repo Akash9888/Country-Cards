@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="photo/PngItem_98529.png" type="image/png" sizes="76x76">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Country Cards</title>
+</head>
+<body class="bg-warning">
+    
+        <div class="container m-5 text-center">
+            <h1 class="text-center text-success ">COUNTRY CARDS</h1>
+            <div class="container">
+
+                <div class="row">
+
+                  <!-- search bar -->
+                  <div class="col-md-4 my-2">
+
+                    <form class="d-flex" id="myForm">
+                        <input id="select_country" class="form-control me-2" type="search" placeholder="Enter country name" aria-label="Search">
+
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+
+                  </div>
+
+                  <!-- displaying cards -->
+                  <div class="col-md-8 pb-4">
+
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                        <!-- national Flag -->
+                        <div class="col">
+                            <div class="card border-success  bg-secondary  h-100">
+                              <div class="card-body">
+                                <h5 class="card-title">National Flag</h5>
+                                <div id="national_flag">
+                                  <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/000000/external-flag-university-vitaliy-gorbachev-lineal-vitaly-gorbachev-1.png"/>
+                                </div>
+                               
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- capital city -->
+                        <div class="col">
+                          <div class="card border-success  bg-secondary  h-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Capital City</h5>
+                              <img src="https://img.icons8.com/office/80/000000/city-buildings.png"/>
+                             <h5 id="capital_city">----</h5>
+                             <!-- <p>learn more about <span id="learn"><a href="https://www.britannica.com/place/Bangladesh"><p id="more">---</p></a></span></p> -->
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- currency -->
+                        <div class="col">
+                          <div class="card border-success  bg-secondary  h-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Currency</h5>
+                              <img src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/000000/external-currency-stock-market-wanicon-lineal-color-wanicon.png"/>
+                             <h5> <span id="currency">--</span><span> (<span id="sign">--</span>)</span>  </h5>
+                             <h6>1 EUR = <span id="currency_value">---</span> <span id="value_sign">--</span></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                        <!-- population -->
+                        <div class="col">
+                          <div class="card border-success  bg-secondary  h-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Population</h5>
+                             <img src="https://img.icons8.com/external-becris-lineal-color-becris/64/000000/external-population-environment-becris-lineal-color-becris.png"/>
+                             <h6>Population: <span id="population">--</span></h6>
+                             <h6>Rank: <span id="rank">--</span></h6>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <!-- covid -->
+                        <div class="col">
+                          <div class="card border-success  bg-secondary   h-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Covid 19 Update</h5>
+                              <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/64/000000/external-covid-19-corona-virus-flatart-icons-lineal-color-flatarticons.png"/>
+                              <h6>Active: <span id="active">----</span></h6>
+                              <h6>Confirmed: <span id="confirmed"> ----</span></h6>
+                              <h6>Recovered: <span id="recovered"> ----</span></h6>
+                              <h6>Death: <span id="deaths"> ----</span></h6>
+                              <h6>Last Updated: <span id="update"> ----</span></h6>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <!-- temparature -->
+                        <div class="col">
+                          <div class="card border-success  bg-secondary   h-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Current Temprature</h5>
+                              <div id="temp_icon">
+                                      <img src="icons/unknown.png" alt="" width="64px" height="64px">
+                              </div>
+                              <h5>  <span id="temp_value">----</span> <span id="temp_unit">&#176c</span></h5>
+                              <h5 id="temp_status">------</h5>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <!-- map -->
+                        <!-- <div class="col">
+                            <div class="card border-success  h-100">
+                              <div id='map' style='width: 100%; height: 100%; border-radius:10px'></div>
+                            </div>
+                        </div> -->
+
+
+                      </div>
+
+                    <!-- map -->
+                      <div class="border-success pt-2" style="width: 100%; height: 200px;">
+                          <div id='map' style='width: 100%; height: 100%; border-radius:10px'></div>
+                      </div>
+                    
+
+                  </div>
+                </div>
+                
+              </div>
+        
+    </div>
+    <!-- js bootstrap link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="code.js"></script>
+    
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  </body>
+
+</html>
