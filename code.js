@@ -212,31 +212,34 @@ function covidInfo(){
 
 // function for fetching currency calue against euro 
 function currencyConversion(){
-
-  fetch(`http://data.fixer.io/api/latest?access_key=6404c6490319aa308d5b8fcef2c0bc81`)
-    .then(response =>response.json())
-    .then(data=>{
-    
-       const arr=Object.entries(data.rates);
-
-       var BreakException = {};
-
-       try{
-         arr.forEach(element=>{
-           if(element[0]==info.currency){
-              info.currencyValue=element[1].toFixed(2);
-              throw BreakException;
-           }
-         })
-       }
-       catch (e) {
-          if (e !== BreakException) throw e;
-        }
-     
+	
+  	info.currencyValue="--";
        populations();
+
+//   fetch(`http://data.fixer.io/api/latest?access_key=6404c6490319aa308d5b8fcef2c0bc81`)
+//     .then(response =>response.json())
+//     .then(data=>{
     
-    })
-    .catch(error => console.log('error', error));
+//        const arr=Object.entries(data.rates);
+
+//        var BreakException = {};
+
+//        try{
+//          arr.forEach(element=>{
+//            if(element[0]==info.currency){
+//               info.currencyValue=element[1].toFixed(2);
+//               throw BreakException;
+//            }
+//          })
+//        }
+//        catch (e) {
+//           if (e !== BreakException) throw e;
+//         }
+     
+//        populations();
+    
+//     })
+//     .catch(error => console.log('error', error));
 }
 
 function populations(){
